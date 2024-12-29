@@ -1,0 +1,56 @@
+[
+    {
+        "code": "Rule.count(derive=Player.city_count, as_count_of=City)",
+        "description": "Calculate total number of cities each player has.",
+        "name": "PlayerTotalCities",
+        "use_case": "To determine the number of cities a player has built during the game."
+    },
+    {
+        "code": "Rule.count(derive=Player.settlement_count, as_count_of=Settlement)",
+        "description": "Calculate total number of settlements each player has.",
+        "name": "PlayerTotalSettlements",
+        "use_case": "To determine the number of settlements a player has built during the game."
+    },
+    {
+        "code": "Rule.count(derive=Player.road_count, as_count_of=Road)",
+        "description": "Calculate total number of roads each player has built.",
+        "name": "PlayerTotalRoads",
+        "use_case": "To keep track of how many roads each player has, influencing their strategy."
+    },
+    {
+        "code": "Rule.sum(derive=Player.total_resources_traded, as_sum_of=Trade.amount, where=lambda row: row.from_player_id == Player.id or row.to_player_id == Player.id)",
+        "description": "Sum the total resources traded by a player.",
+        "name": "TradeResourceTotal",
+        "use_case": "To assess the trading activity of each player during a game."
+    },
+    {
+        "code": "Rule.count(derive=Game.total_dice_rolls, as_count_of=DiceRoll)",
+        "description": "Count the total number of dice rolls made during a game.",
+        "name": "DiceRollTracking",
+        "use_case": "To analyze the frequency of dice rolls in games and how they influence player strategies."
+    },
+    {
+        "code": "Rule.count(derive=Game.number_of_players, as_count_of=GamePlayer)",
+        "description": "Count the total number of players in a game.",
+        "name": "GameNumberOfPlayers",
+        "use_case": "To ensure proper game functionalities based on the number of players involved."
+    },
+    {
+        "code": "Rule.count(derive=Resource.distribution_count, as_count_of=Trade)",
+        "description": "Count the instances of resources distributed during trades.",
+        "name": "ResourceDistributionCount",
+        "use_case": "To evaluate trading patterns and resources in the game."
+    },
+    {
+        "code": "Rule.count(derive=Player.total_dev_cards, as_count_of=DevelopmentCard)",
+        "description": "Count the total development cards held by a player.",
+        "name": "TotalDevelopmentCards",
+        "use_case": "To monitor player progress and potential strategies involving development cards."
+    },
+    {
+        "code": "Rule.count(derive=Player.total_resources_traded, as_count_of=Trade)",
+        "description": "Track the total resources a player has traded during the game.",
+        "name": "Total Resources Traded Rule",
+        "use_case": "Player's trading activity is counted for balanced gameplay."
+    }
+]
